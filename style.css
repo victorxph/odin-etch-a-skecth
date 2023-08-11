@@ -1,0 +1,31 @@
+body{
+    
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+}
+div.canva {
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 1px;
+
+}
+
+.square {
+
+    background-color: black;
+    width: 15px;
+    height: 15px;
+
+}
+
+/* .square:hover {
+
+    background-color: #fff;
+
+} */
