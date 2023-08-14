@@ -5,6 +5,7 @@ let gridPixels = 16;
 function loadGrid(){
     
     canva.innerHTML = '';
+
     
     for (i = 0; i < gridPixels * gridPixels; i++) {
         
@@ -16,21 +17,25 @@ function loadGrid(){
         
     }
     
-}
-
-
-loadGrid();
-
-function goThrough (){
-
-    
+    goThrough();
 
 }
 
 let squares = document.querySelectorAll('.square');
 let squaresArray = Array.from(squares);
 
-squaresArray.forEach(square => {square.addEventListener('mouseenter', changeColor)});
+loadGrid();
+
+
+function goThrough (){
+
+    squares = document.querySelectorAll('.square');
+    squaresArray = Array.from(squares);
+
+    squaresArray.forEach(square => {square.addEventListener('mouseenter', changeColor)});
+
+}
+
 
 
 function changeColor (e) {
@@ -48,21 +53,29 @@ resetBtn.addEventListener('click', showInput);
 
 let body = document.querySelector('body');
 
+// let inputContainer = document.querySelector('.inputContainer');
+let inputContainer = document.createElement('div');
+inputContainer.classList.add('inputContainer')
+
 let gridInput = document.createElement('input');
+gridInput.classList.add('gridChoice');
+gridInput.setAttribute('type', 'number');
+gridInput.setAttribute('inputmode', 'numeric');
 
 let inputGetBtn = document.createElement('button');
 inputGetBtn.classList.add('inputGetBtn');
 inputGetBtn.textContent = 'SET GRID SIZE'
 inputGetBtn.addEventListener('click', getIpuntValue);
 
-gridInput.classList.add('gridChoice');
  
 
 function showInput () {
- 
-  body.appendChild(gridInput);
-  body.appendChild(inputGetBtn);
-  resetBtn.remove();
+  
+    body.appendChild(inputContainer);
+
+    inputContainer.appendChild(gridInput);
+    inputContainer.appendChild(inputGetBtn);
+    resetBtn.remove();
    
 }
 
@@ -70,6 +83,14 @@ function showInput () {
 function getIpuntValue () {
 
     gridPixels = gridInput.value;
+
+    if (gridPixels > 100){
+
+        gridPixels = 100;
+        alert('Max grid: 100x100!');
+
+    }
+
     console.log(gridPixels);
     changePixels();
 
