@@ -1,5 +1,5 @@
 body{
-    
+   
     height: 95vh;
     display: flex;
     justify-content: center;
@@ -19,13 +19,33 @@ div.canva {
 .square {
 
     background-color: black;
-    width: 15px;
-    height: 15px;
+    width: 5px;
+    height: 5px;
 
 }
 
-/* .square:hover {
+.resetBtn{
+ 
+  color: white;
+  background-color: #000000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+ 
+}
 
-    background-color: #fff;
+.inputGetBtn{
 
-} */
+  color: white;
+  background-color: #000000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+ 
+}
+
+.gridChoice {
+ 
+  width: 100px;
+ 
+}
