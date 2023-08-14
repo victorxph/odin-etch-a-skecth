@@ -18,13 +18,9 @@ squaresArray.forEach(square => {square.addEventListener('mouseenter', changeColo
 function changeColor (e) {
 
     let index = squaresArray.indexOf(e.target)
-    squares[index].style.backgroundColor = 'white';
+    squares[index].style.backgroundColor = 'lightgrey';
     // console.log(e);
     // console.log('Índice:', index);
     
-
-}
-
-function findIndex () {
 
 }
